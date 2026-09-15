@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { basePath } from "@/lib/paths";
 
 export function prefixThemeHtml(html: string) {
@@ -13,40 +13,66 @@ export function prefixThemeHtml(html: string) {
     .replace(/(href=")\/(?!\/)/g, `$1${basePath}/`);
 }
 
-function activateScripts(root: HTMLElement) {
-  if (root.dataset.scriptsRan === "1") return;
-  root.dataset.scriptsRan = "1";
-  root.querySelectorAll("script").forEach((old) => {
-    const code = old.textContent?.trim();
-    if (!code) {
-      old.remove();
-      return;
+/** Pull inline scripts out so SSR/static HTML cannot run them before jQuery loads. */
+export function extractInlineScripts(html: string): {
+  html: string;
+  scripts: string[];
+} {
+  const scripts: string[] = [];
+  const cleaned = html.replace(
+    /<script\b[^>]*>([\s\S]*?)<\/script>/gi,
+    (_match, code: string) => {
+      const trimmed = String(code).trim();
+      if (trimmed) scripts.push(trimmed);
+      return "";
+    },
+  );
+  return { html: cleaned, scripts };
+}
+
+function runInlineScripts(codes: string[]) {
+  for (const code of codes) {
+    try {
+      const script = document.createElement("script");
+      script.textContent = `(function(){\n${code}\n})();`;
+      document.body.appendChild(script);
+      script.remove();
+    } catch (error) {
+      console.warn(error);
     }
-    const script = document.createElement("script");
-    script.textContent = `(function(){\n${code}\n})();`;
-    old.replaceWith(script);
-  });
+  }
 }
 
 export function ThemeMarkup({ html }: { html: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const ranRef = useRef(false);
+  const { html: markup, scripts } = useMemo(() => {
+    const prefixed = prefixThemeHtml(html);
+    return extractInlineScripts(prefixed);
+  }, [html]);
 
   useEffect(() => {
+    ranRef.current = false;
     const root = ref.current;
-    if (!root) return;
+    if (!root || !scripts.length) return;
 
-    const run = () => activateScripts(root);
-    const w = window as Window & { jQuery?: unknown };
-    if (w.jQuery) run();
+    const run = () => {
+      const w = window as Window & { jQuery?: unknown };
+      if (!w.jQuery || ranRef.current) return;
+      ranRef.current = true;
+      runInlineScripts(scripts);
+    };
+
+    run();
     window.addEventListener("theme:ready", run);
     return () => window.removeEventListener("theme:ready", run);
-  }, [html]);
+  }, [scripts]);
 
   return (
     <div
       ref={ref}
       suppressHydrationWarning
-      dangerouslySetInnerHTML={{ __html: prefixThemeHtml(html) }}
+      dangerouslySetInnerHTML={{ __html: markup }}
     />
   );
 }

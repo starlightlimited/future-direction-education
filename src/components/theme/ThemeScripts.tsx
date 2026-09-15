@@ -8,16 +8,30 @@ import { withBasePath } from "@/lib/paths";
 function loadScript(src: string) {
   return new Promise<void>((resolve, reject) => {
     const abs = withBasePath(src);
-    const existing = document.querySelector(`script[data-theme-src="${abs}"]`);
+    const existing = document.querySelector(
+      `script[data-theme-src="${abs}"]`,
+    ) as HTMLScriptElement | null;
     if (existing) {
-      resolve();
+      if (existing.dataset.loaded === "1") {
+        resolve();
+        return;
+      }
+      existing.addEventListener("load", () => resolve(), { once: true });
+      existing.addEventListener(
+        "error",
+        () => reject(new Error(`Failed to load ${abs}`)),
+        { once: true },
+      );
       return;
     }
     const script = document.createElement("script");
     script.src = abs;
     script.async = false;
     script.dataset.themeSrc = abs;
-    script.onload = () => resolve();
+    script.onload = () => {
+      script.dataset.loaded = "1";
+      resolve();
+    };
     script.onerror = () => reject(new Error(`Failed to load ${abs}`));
     document.body.appendChild(script);
   });
@@ -123,6 +137,11 @@ export function ThemeScripts() {
 
     loadPromise.current.then(() => {
       if (cancelled) return;
+      const w = window as Window & { jQuery?: unknown };
+      if (!w.jQuery) {
+        console.warn("Theme scripts ready but jQuery failed to load");
+        return;
+      }
       applyThemeDom();
       stopCounters = observeCounters();
       if (cancelled) {
