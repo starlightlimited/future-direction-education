@@ -15,7 +15,10 @@
    
 
     $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
+        // Bootstrap 5 has no jQuery tooltip plugin; skip when unavailable.
+        if (typeof $.fn.tooltip === "function") {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
     });
 
     $.fn.skillBars = function (options) {

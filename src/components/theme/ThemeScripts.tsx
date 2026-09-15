@@ -90,8 +90,9 @@ function applyThemeDom() {
   const primary = document.querySelector("#menu-main-menu");
   const mobile = document.querySelector("#mobile_menu");
   if (primary && mobile && !mobile.innerHTML.trim()) {
-    mobile.innerHTML = primary.outerHTML;
+    mobile.innerHTML = `<ul class="menu">${primary.innerHTML}</ul>`;
   }
+  document.body.classList.add("on-offcanvas");
   document.querySelectorAll(".e-con.e-parent:not(.e-lazyloaded)").forEach((el) => {
     el.classList.add("e-lazyloaded");
   });
