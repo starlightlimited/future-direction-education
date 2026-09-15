@@ -23,7 +23,7 @@ export function NewsletterSection() {
           AI 已經改變工作方式，你準備好未？
         </h2>
         <p className="mt-4 text-white/75">
-          個人報名、企業包班或院校合作，都可以與未來方針教育中心聯絡。想第一時間收到新課程通知，歡迎留下聯絡方式。
+          個人報名、企業包班或院校合作，都可以與未來方針教育聯絡。想第一時間收到新課程通知，歡迎留下聯絡方式。
         </p>
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:flex-row">
           <Link

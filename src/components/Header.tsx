@@ -3,21 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/Logo";
 
 const topNav = [
   { href: "/", label: "首頁" },
-  { href: "/courses", label: "課程" },
+  { href: "/intro", label: "介紹" },
+  { href: "/courses", label: "課程一覽" },
+  { href: "/training", label: "企業培訓" },
   { href: "/about", label: "關於我們" },
   { href: "/contact", label: "聯絡我們" },
-];
-
-const subNav = [
-  { href: "/courses", label: "課程一覽" },
-  { href: "/about#partners", label: "企業培訓" },
-  { href: "/register", label: "立即報名" },
-  { href: "/contact", label: "查詢" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -67,13 +62,6 @@ export function Header() {
             ))}
           </nav>
           <div className="hidden items-center gap-3 lg:flex">
-            <Link
-              href="/courses"
-              className="grid h-10 w-10 place-items-center rounded-full text-white/80 transition hover:bg-white/10 hover:text-white"
-              aria-label="搜尋課程"
-            >
-              <Search size={18} />
-            </Link>
             <Link href="/register" className="btn-primary !px-5 !py-2.5 text-sm">
               立即報名
             </Link>
@@ -89,17 +77,6 @@ export function Header() {
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-        <div className="hidden border-t border-white/10 py-3 lg:flex lg:items-center lg:justify-center lg:gap-10">
-          {subNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-white/75 transition hover:text-white"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
       </div>
 
       <div
@@ -114,7 +91,7 @@ export function Header() {
         className={`mobile-nav-panel lg:hidden ${open ? "is-open" : ""}`}
       >
         <div className="mobile-nav-inner">
-          {[...topNav, ...subNav.filter((item) => item.href !== "/register")].map((item, i) => (
+          {[...topNav.filter((item) => item.href !== "/register")].map((item, i) => (
             <Link
               key={`${item.href}-${item.label}`}
               href={item.href}

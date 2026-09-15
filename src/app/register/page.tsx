@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { RegisterForm } from "@/components/RegisterForm";
 
 export const metadata: Metadata = {
-  title: "課程報名｜未來方針教育中心",
+  title: "課程報名｜未來方針教育",
   description: "報名 GEO 證書課程、AI 網站建立或 AI Marketing 實戰課程。",
 };
 

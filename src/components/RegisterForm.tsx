@@ -9,12 +9,16 @@ export function RegisterForm({ initialCourse = "geo" }: { initialCourse?: string
   const [courseId, setCourseId] = useState<string>(
     courses.some((c) => c.id === initialCourse) ? initialCourse : "geo",
   );
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const fromQuery = new URLSearchParams(window.location.search).get("course");
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = params.get("course");
     if (fromQuery && courses.some((c) => c.id === fromQuery)) {
       setCourseId(fromQuery);
     }
+    const emailQuery = params.get("email");
+    if (emailQuery) setEmail(emailQuery);
   }, []);
 
   const selected = useMemo(
@@ -65,7 +69,14 @@ export function RegisterForm({ initialCourse = "geo" }: { initialCourse?: string
         </label>
         <label className="block">
           <span className="label">電郵地址 *</span>
-          <input name="email" type="email" className="input" required />
+          <input
+            name="email"
+            type="email"
+            className="input"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </label>
         <label className="block">
           <span className="label">公司／機構名稱</span>

@@ -5,7 +5,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "聯絡未來方針教育中心｜課程及企業培訓查詢",
+  title: "聯絡未來方針教育｜課程及企業培訓查詢",
   description:
     "查詢個人課程、企業培訓、學校／大專合作，或為團隊設計更貼合工作場景的 AI 課程。",
 };
@@ -21,7 +21,7 @@ export default function ContactPage() {
               想學 AI，或者想把 AI 帶入你的團隊？
             </h2>
             <p className="mt-4 leading-8 text-ink/90">
-              無論你想了解個人課程、企業培訓、學校／大專合作，都可以與未來方針教育中心聯絡。
+              無論你想了解個人課程、企業培訓、學校／大專合作，都可以與未來方針教育聯絡。
             </p>
             <ul className="tech-card mt-8 space-y-4 rounded-2xl p-6 text-sm text-muted">
               <li className="flex gap-3">

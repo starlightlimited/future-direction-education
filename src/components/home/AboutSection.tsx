@@ -35,12 +35,12 @@ export function AboutSection() {
           />
         </Reveal>
         <Reveal delay={120}>
-          <p className="section-kicker">About Centre</p>
+          <p className="section-kicker">關於中心</p>
           <h2 className="mt-4 font-display text-3xl font-semibold leading-snug text-navy md:text-[40px]">
             面向成人、企業及 Marketing 的未來技能教育平台
           </h2>
           <p className="mt-5 text-base leading-8 text-ink/90">
-            未來方針教育中心過往以傳統教育／補習服務為基礎，現階段重新定位為
+            未來方針教育過往以傳統教育／補習服務為基礎，現階段重新定位為
             AI 教育機構。我們希望讓你真正學懂 AI，而不是只聽懂幾個新名詞。
           </p>
           <ul className="mt-7 grid gap-3 sm:grid-cols-2">

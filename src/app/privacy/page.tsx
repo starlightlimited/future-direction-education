@@ -3,8 +3,8 @@ import { PageBanner } from "@/components/PageBanner";
 import { site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "私隱政策｜未來方針教育中心",
-  description: "未來方針教育中心網站私隱政策占位頁，待法務確認後更新。",
+  title: "私隱政策｜未來方針教育",
+  description: "未來方針教育網站私隱政策占位頁，待法務確認後更新。",
 };
 
 export default function PrivacyPage() {

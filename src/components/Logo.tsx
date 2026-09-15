@@ -25,13 +25,6 @@ export function Logo({ light = false }: { light?: boolean }) {
         >
           {site.nameZh}
         </span>
-        <span
-          className={`block truncate text-[11px] leading-tight ${
-            light ? "text-white/70" : "text-muted"
-          }`}
-        >
-          {site.nameEn}
-        </span>
       </span>
     </Link>
   );

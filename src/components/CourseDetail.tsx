@@ -13,7 +13,7 @@ export function CourseDetail({ course }: { course: Course }) {
         title={course.title}
         crumbs={[
           { href: "/", label: "首頁" },
-          { href: "/courses", label: "課程" },
+          { href: "/courses", label: "課程一覽" },
         ]}
       />
       <section className="px-4 py-16 lg:px-8">

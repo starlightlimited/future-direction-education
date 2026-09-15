@@ -1,6 +1,7 @@
 export const site = {
-  nameZh: "未來方針教育中心",
-  nameEn: "Future Direction Education Centre",
+  nameZh: "未來方針教育",
+  legalName: "未來方針教育中心",
+  nameEn: "Future Direction Education",
   slogan: "AI 教育 × 商業應用 × 未來技能",
   tagline: "學懂 AI，不只是跟上科技，而是跟上市場。",
   license: "596434",
@@ -10,13 +11,14 @@ export const site = {
   email: "即將公布",
   hours: "即將公布",
   description:
-    "未來方針教育中心專注 AI 與數碼技能教育，將複雜技術拆成簡單、實用、可即時應用的課程，面向中小企、Marketing 從業員及創業者。",
+    "未來方針教育專注 AI 與數碼技能教育，將複雜技術拆成簡單、實用、可即時應用的課程，面向中小企、Marketing 從業員及創業者。",
 };
 
 export const nav = [
-  { href: "/courses", label: "課程" },
+  { href: "/intro", label: "介紹" },
+  { href: "/courses", label: "課程一覽" },
+  { href: "/training", label: "企業培訓" },
   { href: "/about", label: "關於我們" },
-  { href: "/about#partners", label: "企業培訓" },
   { href: "/contact", label: "聯絡我們" },
 ];
 
@@ -45,7 +47,7 @@ export const whyNow = [
 
 export const principles = [
   {
-    key: "Simple",
+    key: "簡單",
     title: "先理解，再談技術",
     body: "不以艱深術語作為門檻，先講清楚原理。",
   },
@@ -60,7 +62,7 @@ export const principles = [
     body: "學員帶走 Framework、Checklist 或可重複使用的方法。",
   },
   {
-    key: "Future-ready",
+    key: "面向未來",
     title: "工具會變，判斷力持續",
     body: "不是盲目依賴 AI，而是知道甚麼應交給 AI、甚麼必須由人決定。",
   },
@@ -129,7 +131,7 @@ export const courses: Course[] = [
     id: "geo",
     slug: "geo",
     title: "GEO 生成式引擎優化證書課程",
-    english: "Generative Engine Optimization Certificate Course",
+    english: "讓品牌被 AI 搜尋理解及引用",
     level: "入門",
     duration: "2 小時",
     audience: "中小企／Marketing／Agency",
@@ -140,7 +142,7 @@ export const courses: Course[] = [
     date: "2026年9月17日（星期四）",
     time: "晚上 7:30 – 9:30",
     format: "香港實體課程",
-    seoTitle: "GEO 證書課程｜生成式引擎優化入門｜未來方針教育中心",
+    seoTitle: "GEO 證書課程｜生成式引擎優化入門｜未來方針教育",
     seoDescription:
       "2 小時理解 GEO 與 AI Search，即場使用 Website Checklist 檢查網站。2026年9月17日香港實體課程，HK$100。",
     positioning:
@@ -180,7 +182,7 @@ export const courses: Course[] = [
       },
       {
         step: "03",
-        title: "GEO Search Intent",
+        title: "GEO 搜尋意圖",
         body: "地區＋服務、問題＋場景、疑問句、規格、價錢等。",
       },
       {
@@ -190,7 +192,7 @@ export const courses: Course[] = [
       },
       {
         step: "05",
-        title: "Website Health Check",
+        title: "網站健康檢查",
         body: "即場使用 Checklist 檢查網站。",
       },
       {
@@ -213,7 +215,7 @@ export const courses: Course[] = [
     cover: "/assets/capabi2.jpg",
     fee: "即將公布",
     format: "香港實體課程",
-    seoTitle: "AI 網站建立課程｜由零規劃商業網站｜未來方針教育中心",
+    seoTitle: "AI 網站建立課程｜由零規劃商業網站｜未來方針教育",
     seoDescription:
       "讓沒有技術背景的學員理解網站由零到上線的思考流程，並利用 AI 協助規劃、內容及初步製作。",
     positioning: "由「叫 AI 整個網站」到真正建立一個可以用的商業網站。",
@@ -251,7 +253,7 @@ export const courses: Course[] = [
     cover: "/assets/capabi3.jpg",
     fee: "即將公布",
     format: "香港實體課程",
-    seoTitle: "AI Marketing 課程｜AI 行銷實戰與工作流程｜未來方針教育中心",
+    seoTitle: "AI Marketing 課程｜AI 行銷實戰與工作流程｜未來方針教育",
     seoDescription:
       "把 AI 放入 Marketing Workflow，建立由 Research、定位、內容、製作、搜尋到分析的協作流程。",
     positioning: "不是學更多工具，而是建立一套更有效率的 Marketing 工作方式。",

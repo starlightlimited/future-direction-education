@@ -3,7 +3,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { notices, site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "條款及細則｜未來方針教育中心",
+  title: "條款及細則｜未來方針教育",
   description: "課程報名條款、退款及改期安排占位頁，待中心正式政策補上。",
 };
 

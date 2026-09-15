@@ -8,9 +8,9 @@ import { TechField } from "@/components/TechField";
 import { partners, principles, site } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "關於未來方針教育中心｜香港 AI 教育機構",
+  title: "關於未來方針教育｜香港 AI 教育機構",
   description:
-    "未來方針教育中心由傳統教育服務出發，延伸至人工智能、數碼技能及商業應用，把複雜科技變成可應用的能力。",
+    "未來方針教育由傳統教育服務出發，延伸至人工智能、數碼技能及商業應用，把複雜科技變成可應用的能力。",
 };
 
 export default function AboutPage() {
@@ -42,7 +42,7 @@ export default function AboutPage() {
               教育不只是教你今天要用的工具，而是讓你準備好下一次改變。
             </h2>
             <p className="mt-5 text-base leading-8 text-ink/90">
-              未來方針教育中心由傳統教育服務的基礎出發，隨着工作、商業及學習方式進入
+              未來方針教育由傳統教育服務的基礎出發，隨着工作、商業及學習方式進入
               AI 時代，我們把教育方向延伸至人工智能、數碼技能及商業應用。
             </p>
             <p className="mt-4 text-base leading-8 text-ink/90">
@@ -92,7 +92,7 @@ export default function AboutPage() {
             <ul className="mt-4 space-y-3 text-sm leading-7 text-muted">
               <li className="flex gap-2">
                 <CheckCircle2 size={16} className="mt-1 text-purple" />
-                正式註冊名稱：{site.nameZh}
+                正式註冊名稱：{site.legalName}
               </li>
               <li className="flex gap-2">
                 <CheckCircle2 size={16} className="mt-1 text-purple" />
@@ -110,10 +110,10 @@ export default function AboutPage() {
       <section id="partners" className="scroll-mt-24 bg-white px-4 py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="font-display text-3xl font-semibold text-navy">
-            合作夥伴｜Education × Marketing × Technology
+            合作夥伴｜教育 × 市場推廣 × 科技
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-ink/90">
-            未來方針教育中心透過跨領域合作，把教育內容與真實市場應用連結。合作夥伴的角色不是取代教學，而是讓課程能夠接觸到最新的
+            未來方針教育透過跨領域合作，把教育內容與真實市場應用連結。合作夥伴的角色不是取代教學，而是讓課程能夠接觸到最新的
             Marketing、網站、AI Search 及企業科技應用。
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -134,7 +134,7 @@ export default function AboutPage() {
           </div>
           <div className="relative mt-10 overflow-hidden rounded-2xl bg-navy p-8 text-white">
             <TechField />
-            <h3 className="relative z-10 text-2xl font-semibold">成為合作夥伴</h3>
+            <h3 className="partner-cta-title relative z-10">成為合作夥伴</h3>
             <p className="relative z-10 mt-3 max-w-3xl text-white/75">
               我們歡迎大專院校、學校、商會、專業團體、企業及科技機構共同策劃 AI
               教育項目。如希望合作舉辦講座、工作坊、企業內訓或聯合證書課程，歡迎與我們聯絡。

@@ -32,9 +32,9 @@ html {
 }
 
 body {
-  background: var(--page);
+  background: #ffffff;
   color: var(--ink);
-  font-family: var(--font-sans);
+  font-family: Inter, var(--font-noto), var(--font-sans), sans-serif;
 }
 
 h1,
@@ -250,6 +250,48 @@ h3,
   height: 2px;
   background: linear-gradient(90deg, var(--mint), var(--purple));
   box-shadow: 0 0 10px var(--mint);
+}
+
+.page-banner .page-banner__kicker {
+  color: var(--mint) !important;
+}
+
+.page-banner .page-banner__title {
+  color: #fff !important;
+  font-family: var(--font-display), Inter, sans-serif !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.03em;
+  margin: 0 !important;
+}
+
+/* WordPress theme h3 { color: #243757 } leaks onto this navy card. */
+.partner-cta-title {
+  color: #fff !important;
+  font-family: var(--font-display), Inter, var(--font-noto), sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em;
+  margin: 0 !important;
+}
+
+.page-banner .page-banner__crumbs,
+.page-banner .page-banner__crumbs span {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.page-banner .page-banner__crumbs a {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.page-banner .page-banner__crumbs a:hover {
+  color: #fff !important;
+}
+
+.page-banner .page-banner__current {
+  color: #fff !important;
 }
 
 .tech-grid {
@@ -845,6 +887,266 @@ h3,
 
 .mobile-nav-item:not(.btn-primary):hover {
   background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-home .main-contain #content {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.newsletter__section .elementor-element-18195aa > .e-con-inner {
+  align-items: center;
+}
+
+.newsletter__section .elementor-element-a30760d {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.newsletter__section .section__center {
+  width: 100%;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.newsletter__section .section__center .title,
+.newsletter__section .section__center .description {
+  text-align: center;
+}
+
+.newsletter__section .elementor-element-1a65ade .elementor-widget-container {
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter__section a.newsletter-register-btn {
+  display: inline-flex !important;
+  width: auto;
+  max-width: none;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+),
+#themephi-header .elementor-element-c884595 .themephi-button a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: linear-gradient(180deg, #6d5cff 0%, var(--purple) 100%) !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  padding: 12px 24px !important;
+  min-height: 48px;
+  box-shadow: 0 10px 28px rgba(91, 77, 255, 0.38),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset !important;
+  text-transform: none !important;
+  white-space: nowrap;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#themephi-header .elementor-element-c884595 .themephi-button a {
+  font-size: 14px !important;
+  padding: 10px 18px !important;
+  min-height: 42px;
+}
+
+.theme-home a.cmn--btn.cat_btn,
+.theme-home a.cmn--btn.capabilites__btn {
+  min-height: 0;
+  font-size: 13px !important;
+  padding: 5px 12px !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.theme-home a.cmn--btn.cat_btn::after,
+.theme-home a.cmn--btn.capabilites__btn::after {
+  display: none !important;
+}
+
+.theme-home a.cmn--btn.cat_btn:hover,
+.theme-home a.cmn--btn.capabilites__btn:hover {
+  transform: none;
+  box-shadow: none !important;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+) span,
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more
+) i,
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more
+) .material-symbols-outlined,
+#themephi-header .elementor-element-c884595 .themephi-button a span {
+  color: #fff !important;
+  position: relative;
+  z-index: 1;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+)::before,
+#themephi-header .elementor-element-c884595 .themephi-button a::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+)::after,
+#themephi-header .elementor-element-c884595 .themephi-button a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.28) 48%,
+    transparent 72%
+  );
+  transform: translateX(-120%);
+  animation: btn-shine 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+):hover,
+#themephi-header .elementor-element-c884595 .themephi-button a:hover {
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(91, 77, 255, 0.5), 0 0 24px rgba(65, 226, 149, 0.25) !important;
+}
+
+.theme-home :is(
+  a.cmn--btn,
+  a.readon,
+  a.themephi_button,
+  a.slider-btn.capa__more,
+  a.newsletter-register-btn
+):hover span,
+#themephi-header .elementor-element-c884595 .themephi-button a:hover span {
+  color: #fff !important;
+}
+
+.theme-home a.slider-btn.capa__more .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.elementor-invisible {
+  visibility: visible !important;
+}
+
+[data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+.wow {
+  visibility: visible !important;
+}
+
+.tps-accordion .accordion-collapse.show,
+.tps-accordion .accordion-collapse.collapse.show,
+.tps-accordion .accordion-body {
+  visibility: visible !important;
+}
+
+/* Tailwind's `.collapse` utility is visibility:collapse; Bootstrap uses the
+   same class for accordions. Keep collapsed panels hidden with display:none. */
+.accordion-collapse.collapse,
+.accordion-collapse.collapsing {
+  visibility: visible !important;
+}
+
+.main-contain .elementor-absolute.elementor-widget-image,
+.main-contain .elementor-absolute.elementor-widget-tp-image-showcase,
+.main-contain .elementor-absolute.elementor-widget-tp-intel-dot {
+  pointer-events: none;
+}
+
+#themephi-header.header-style-1 {
+  position: relative;
+  z-index: 99;
+}
+
+#themephi-header .menu-area .navbar ul.menu > li.current-menu-item > a,
+#themephi-header .menu-area .navbar ul.menu > li.current_page_item > a,
+#themephi-header .menu-area .navbar ul.menu > li.active > a,
+.sidenav .menu > li.current-menu-item > a,
+#mobile_menu .menu-item.current-menu-item > a {
+  color: #41e295 !important;
+}
+
+#themephi-header .elementor-element-c884595 .themephi-button a svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.slider-style6 .content--box .banner-image img.banner-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+#themephi-header .hfe-site-logo-img,
+#colophon .hfe-site-logo-img {
+  display: block;
+  height: auto;
+  max-height: 42px;
+  width: auto;
+  max-width: 180px;
+}
+
+@media (max-width: 767px) {
+  #themephi-header .hfe-site-logo-img,
+  #colophon .hfe-site-logo-img {
+    max-height: 34px;
+    max-width: 150px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

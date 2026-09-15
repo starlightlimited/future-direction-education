@@ -5,9 +5,9 @@ import { Logo } from "@/components/Logo";
 import { site } from "@/lib/content";
 
 const links = [
-  { href: "/courses", label: "課程" },
+  { href: "/courses", label: "課程一覽" },
   { href: "/about", label: "關於我們" },
-  { href: "/about#partners", label: "企業培訓" },
+  { href: "/training", label: "企業培訓" },
   { href: "/register", label: "立即報名" },
   { href: "/contact", label: "聯絡我們" },
   { href: "/about", label: "常見問題" },
