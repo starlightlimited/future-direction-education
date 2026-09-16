@@ -7,6 +7,7 @@ export function prefixThemeHtml(html: string) {
   if (!basePath) return html;
   return html
     .replaceAll('src="/theme/', `src="${basePath}/theme/`)
+    .replaceAll('src="/brand/', `src="${basePath}/brand/`)
     .replaceAll('href="/theme/', `href="${basePath}/theme/`)
     .replaceAll('srcset="/theme/', `srcset="${basePath}/theme/`)
     .replaceAll(", /theme/", `, ${basePath}/theme/`)
