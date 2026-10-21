@@ -1,24 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_TC } from "next/font/google";
 import { ThemeLinks } from "@/components/theme/ThemeLinks";
 import { ThemeScripts } from "@/components/theme/ThemeScripts";
 import { ThemeHeader } from "@/components/theme/ThemeHeader";
 import { ThemeFooter } from "@/components/theme/ThemeFooter";
 import { site } from "@/lib/content";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const noto = Noto_Sans_TC({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -38,11 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="zh-HK"
-      data-scroll-behavior="smooth"
-      className={`${inter.variable} ${noto.variable} h-full`}
-    >
+    <html lang="zh-HK" data-scroll-behavior="smooth" className="h-full">
       <body className={`${themeBodyClass} min-h-full`}>
         <ThemeLinks />
         <ThemeScripts />

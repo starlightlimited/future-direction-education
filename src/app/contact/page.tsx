@@ -30,7 +30,15 @@ export default function ContactPage() {
               </li>
               <li className="flex gap-3">
                 <Mail size={18} className="text-purple" />
-                電郵：{site.email}
+                <span>
+                  Email:{" "}
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="font-medium text-purple hover:text-purple-2"
+                  >
+                    {site.email}
+                  </a>
+                </span>
               </li>
               <li className="flex gap-3">
                 <MapPin size={18} className="text-purple" />

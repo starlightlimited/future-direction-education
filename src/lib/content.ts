@@ -8,7 +8,7 @@ export const site = {
   address: "荃灣海濱花園平台C(9-11座)停車場L2 120A號舖",
   phone: "即將公布",
   whatsapp: "即將公布",
-  email: "即將公布",
+  email: "general@futuretech.edu.hk",
   hours: "即將公布",
   description:
     "未來方針教育專注 AI 與數碼技能教育，將複雜技術拆成簡單、實用、可即時應用的課程，面向中小企、Marketing 從業員及創業者。",

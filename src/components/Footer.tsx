@@ -77,7 +77,9 @@ export function Footer() {
               <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-purple/80">
                 <Mail size={14} />
               </span>
-              {site.email}
+              <a href={`mailto:${site.email}`} className="hover:text-white">
+                Email: {site.email}
+              </a>
             </li>
             <li className="flex gap-3">
               <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-purple/80">
